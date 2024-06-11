@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +19,16 @@
     <body class="hold-transition login-page">
     <div class="login-box">
     <!-- /.login-logo -->
-    <div class="card card-outline card-primary">
+    <div class="card card-outline card-success ">
         <div class="card-header text-center">
-        <a href="../../index2.html" class="h1"><b>CORHUILA</b></a>
+        <a href="index.php" class="h1 text-success"><b>CORHUILA</b></a>
         </div>
         <div class="card-body">
         <p class="login-box-msg">Inicia sesión</p>
 
-        <form action="index.html" method="post">
+        <form action="conexion_inicio.php" method="POST">
             <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="text" name="usuario" class="form-control" placeholder="Usuario" required>
             <div class="input-group-append">
                 <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -34,7 +36,7 @@
             </div>
             </div>
             <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" name="contraseña" class="form-control" placeholder="Contraseña" required>
             <div class="input-group-append">
                 <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -44,7 +46,7 @@
             <div class="row d-flex justify-content-center ">
             <!-- /.col -->
             <div class="col-12">
-                <button type="submit" class=" btn btn-primary btn-block">Ingresar</button>
+                <button type="submit" class=" btn btn-success btn-block">Ingresar</button>
             </div>
             <!-- /.col -->
             </div>
@@ -52,9 +54,9 @@
     <br>
         
 
-        <p class="mb-1 text-center">
+        <!--<p class="mb-1 text-center">
             <a href="OlvidoContraseña.html">Olvidé mi contraseña ?</a>
-        </p>
+        </p>-->
         
         </div>
         <!-- /.card-body -->

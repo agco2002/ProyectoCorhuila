@@ -36,21 +36,21 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Corhuila</div>
-                            <a class="nav-link" href="inicio.html">
+                            <a class="nav-link" href="inicio.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Inicio
                             </a>
-                            <a class="nav-link" href="RegistroEventos.html">
+                            <a class="nav-link" href="Eventos.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Registrar Evento
+                                Eventos
                             </a>
-                            <a class="nav-link" href="Usuarios.html">
+                            <a class="nav-link" href="administrativos.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Administrativos
+                            </a>
+                            <a class="nav-link" href="Usuarios.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Usuarios
-                            </a>
-                            <a class="nav-link" href="inicio.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Registro de Ingreso
                             </a>
                             
                     </div>
