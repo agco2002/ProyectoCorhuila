@@ -16,10 +16,10 @@
   <h1 class="m-5 text-center">EDITAR INFORMACIÓN DE USUARIOS</h1>
   <form class="container" action="conexion_editar_usuarios.php" method="POST">
   <?php
-         include 'conexion.php';
+         include 'config/config.php';
 
             $sql = "SELECT * FROM registro_usuarios WHERE id=".$_GET['id'];
-            $resultado = $conn->query($sql);
+            $resultado = $conexion->query($sql);
 
             $row = $resultado->fetch_assoc();
         ?>

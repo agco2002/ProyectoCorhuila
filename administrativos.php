@@ -1,3 +1,7 @@
+<?php
+require_once 'config/config.php';
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -62,7 +66,9 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Registrar Usuarios</h1>
                         <hr>
+                            
 
+          
                         <script>
                           function confirmacion(){
                               var respuesta = confirm("¿Confirma que desea borrar el Registro?");
@@ -149,8 +155,9 @@
                                 <div class="card">
                                   <div class="card-header">
                                     <h3 class=" text-center">Usuarios Registrados:</h3>
-                                    <div class="row">
-                                        <div class="col-md-8">
+                                    <br>
+                                      <div class="row">
+                                        <div class="col-md-4">
                                           <form action="search_users.php" method="GET" class="d-flex">
                                             <input type="text" name="search_term" class="form-control me-2" placeholder="Buscar usuario">
                                             <button type="submit" class="btn btn-outline-success">Buscar</button>
@@ -172,9 +179,9 @@
                                       </thead>
                                       <tbody>
                                       <?php
-                                        include 'conexion.php';
+                                        include 'config/config.php';
                         
-                                        $sql = $conn->query("SELECT * FROM registro_usuarios");
+                                        $sql = $conexion->query("SELECT * FROM registro_usuarios");
                         
                                         while ($resultado = $sql->fetch_assoc()) {
                                         ?>

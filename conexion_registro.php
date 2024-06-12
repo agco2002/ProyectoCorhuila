@@ -1,5 +1,5 @@
 <?php
-include('conexion.php');
+include('config/config.php');
 
 // Obtener datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST"){ 
@@ -12,7 +12,7 @@ $acepta_terminos = isset($_POST['acepta_terminos']) ? 1 : 0; // 1 si está marca
 
 // Verificar si el usuario ya existe en la base de datos
 $sql = "SELECT id FROM registro_usuarios WHERE correo = '$correo'";
-$result = $conn->query($sql);
+$result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
 echo "El correo ya se encuentra registrado. Por favor, elige otro correo electrónico.";
@@ -21,16 +21,16 @@ echo "El correo ya se encuentra registrado. Por favor, elige otro correo electr�
 // Insertar datos en la base de datos
 $sql = "INSERT INTO registro_usuarios (nombre, correo, usuario, contraseña, acepta_terminos) VALUES ('$nombre', '$correo', '$usuario', '$contraseña', '$acepta_terminos')";
 
-if ($conn->query($sql) === TRUE) {
+if ($conexion->query($sql) === TRUE) {
 // Redireccionar a la página de inicio de sesión
      header("Location: administrativos.php");
      exit();
 
 } else {
-	echo "Error al registrar el correo electrónico". $conn->error;
+	echo "Error al registrar el correo electrónico". $conexion->error;
 }
 }
 }
 
-$conn->close();
+$conexion->close();
 ?>

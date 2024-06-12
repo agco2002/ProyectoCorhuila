@@ -1,5 +1,5 @@
 <?php
-    include 'conexion.php';
+    include 'config/config.php';
 
     $id = $_POST['id'];
     $nombre = $_POST['nombre'];
@@ -8,7 +8,7 @@
 
     $sql = "UPDATE registro_usuarios SET nombre='$nombre', correo='$correo', usuario='$usuario' WHERE id='$id'";
 
-    if ($resultado = $conn->query($sql)) {
+    if ($resultado = $conexion->query($sql)) {
         header("location:administrativos.php");
     }
 ?>
