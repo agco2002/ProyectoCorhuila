@@ -4,9 +4,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Correo</th>
                 <th scope="col">Edad</th>
-                <th scope="col">Cédula</th>
+                <th scope="col">N° Identificación</th>
                 <th scope="col">Cargo</th>
                 <th scope="col">Avatar</th>
                 <th scope="col">Acciones</th>
@@ -18,7 +17,6 @@
                 <tr id="empleado_<?php echo $empleado['id']; ?>">
                     <th scope='row'><?php echo $empleado['id']; ?></th>
                     <td><?php echo $empleado['nombre']; ?></td>
-                    <td><?php echo $empleado['correo']; ?></td>
                     <td> <?php echo $empleado['edad']; ?></td>
                     <td><?php echo $empleado['cedula']; ?></td>
                     <td><?php echo $empleado['cargo']; ?></td>

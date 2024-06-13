@@ -47,13 +47,12 @@ async function cargarDatosEmpleadoEditar(idEmpleado) {
       `acciones/detallesEmpleado.php?id=${idEmpleado}`
     );
     if (response.status === 200) {
-      const { id, nombre, correo, edad, cedula, sexo, telefono, cargo, avatar } =
+      const { id, nombre, edad, cedula, sexo, telefono, cargo, avatar } =
         response.data;
 
-      console.log(id, nombre, correo, edad, cedula, sexo, telefono, cargo, avatar);
+      console.log(id, nombre, edad, cedula, sexo, telefono, cargo, avatar);
       document.querySelector("#idempleado").value = id;
       document.querySelector("#nombre").value = nombre;
-      document.querySelector("#correo").value = correo;
       document.querySelector("#edad").value = edad;
       document.querySelector("#cedula").value = cedula;
       document.querySelector("#telefono").value = telefono;

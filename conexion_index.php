@@ -16,7 +16,7 @@ if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     $_SESSION['usuario_id'] = $row['id'];
     $_SESSION['nombre_usuario'] = $row['nombre'];
-    header("<Location:Registro_Eventos/inicio.php");
+    header("Location:inicio.php");
 } else {
     // Muestra un mensaje de error si las credenciales son incorrectas
     echo "<script> alert('Usuario o Contraseña Son Incorrectas');window.location= 'index.php' </script>";

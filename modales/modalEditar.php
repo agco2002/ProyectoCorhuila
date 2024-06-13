@@ -13,10 +13,6 @@
                             <input type="text" name="nombre" id="nombre" class="form-control" />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Correo</label>
-                            <input type="email" name="correo" id="correo" class="form-control" />
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label">N° Identificación</label>
                             <input type="text" name="cedula" id="cedula" class="form-control" />
                         </div>

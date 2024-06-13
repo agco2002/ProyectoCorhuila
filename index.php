@@ -1,4 +1,6 @@
-
+<?php
+require_once 'conexion_index.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">

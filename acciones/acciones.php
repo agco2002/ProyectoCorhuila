@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $nombre = trim($_POST['nombre']);
-    $correo = trim($_POST['correo']);
     $edad = trim($_POST['edad']);
     $cedula = trim($_POST['cedula']);
     $sexo = trim($_POST['sexo']);
@@ -33,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Mover el archivo a la ubicación deseada
         if (move_uploaded_file($archivoTemporal, $rutaDestino)) {
 
-            $sql = "INSERT INTO $tbl_empleados (nombre, correo, edad, cedula, sexo, telefono, cargo, avatar) 
-            VALUES ('$nombre', '$correo' '$edad', '$cedula', '$sexo', '$telefono', '$cargo', '$nombreArchivo')";
+            $sql = "INSERT INTO $tbl_empleados (nombre, edad, cedula, sexo, telefono, cargo, avatar) 
+            VALUES ('$nombre', '$edad', '$cedula', '$sexo', '$telefono', '$cargo', '$nombreArchivo')";
 
             if ($conexion->query($sql) === TRUE) {
                 header("location:../");

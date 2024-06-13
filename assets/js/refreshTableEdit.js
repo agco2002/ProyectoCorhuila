@@ -15,7 +15,6 @@ window.actualizarEmpleadoEdit = async function (idEmpleado) {
               infoEmpleado.id
             }</th>
             <td>${infoEmpleado.nombre}</td>
-            <td>${infoEmpleado.correo}</td>
             <td>${infoEmpleado.edad}</td>
             <td>${infoEmpleado.cedula}</td>
             <td>${infoEmpleado.cargo}</td>

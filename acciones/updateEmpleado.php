@@ -4,7 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id = trim($_POST['id']); // Asegúrate de recibir el ID del empleado que se actualizará
     $nombre = trim($_POST['nombre']);
-    $nombre = trim($_POST['correo']);
     $edad = trim($_POST['edad']);
     $cedula = trim($_POST['cedula']);
     $sexo = trim($_POST['sexo']);
@@ -32,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Actualiza los datos en la base de datos
     $sql = "UPDATE tbl_empleados 
-            SET nombre='$nombre', correo='$correo', edad='$edad', cedula='$cedula', sexo='$sexo', telefono='$telefono', cargo='$cargo'";
+            SET nombre='$nombre', edad='$edad', cedula='$cedula', sexo='$sexo', telefono='$telefono', cargo='$cargo'";
 
     // Si hay un nuevo avatar, actualiza su valor
     if ($avatar !== null) {

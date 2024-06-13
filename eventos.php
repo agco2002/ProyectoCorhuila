@@ -61,56 +61,42 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Registrar Evento</h1>
                         <hr>
-                        <div class="row">
-                            
-                            <div class="container mt-5">
-                        
-                                <form id="formularioEvento" novalidate>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="nombreOrganizador" class="form-label">Nombre del organizador:</label>
-                                            <input type="text" class="form-control" id="nombreOrganizador" name="nombreOrganizador" placeholder="Ingrese su nombre completo" required>
-                                        </div>
-                        
-                                        <div class="col-md-6 mb-3">
-                                            <label for="nombreEvento" class="form-label">Nombre del evento:</label>
-                                            <input type="text" class="form-control" id="nombreEvento" name="nombreEvento" placeholder="Ingrese el nombre del evento" required>
-                                        </div>
+                        <div class="container">
+                                <div class="formulario">
+                                <h2>Formulario de creación de evento</h2>
+                                <form action="guardar_evento.php" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                    <label for="nombreOrganizador">Nombre del organizador:</label>
+                                    <input type="text" class="form-control" id="nombreOrganizador" name="nombreOrganizador" placeholder="Ingrese su nombre completo" required>
                                     </div>
-                        
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <label for="fechaEvento" class="form-label">Fecha del evento:</label>
-                                            <input type="date" class="form-control" id="fechaEvento" name="fechaEvento" required>
-                                        </div>
-                        
-                                        <div class="col-md-4 mb-3">
-                                            <label for="horaInicioEvento" class="form-label">Hora de inicio:</label>
-                                            <input type="time" class="form-control" id="horaInicioEvento" name="horaInicioEvento" required>
-                                        </div>
-                        
-                                        <div class="col-md-4 mb-3">
-                                            <label for="horaFinEvento" class="form-label">Hora de finalización:</label>
-                                            <input type="time" class="form-control" id="horaFinEvento" name="horaFinEvento" required>
-                                        </div>
+                                    <div class="form-group">
+                                    <label for="nombreEvento">Nombre del evento:</label>
+                                    <input type="text" class="form-control" id="nombreEvento" name="nombreEvento" placeholder="Ingrese el nombre del evento" required>
                                     </div>
-                        
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="duracionEvento" class="form-label">Duración del evento (en minutos):</label>
-                                            <input type="number" class="form-control" id="duracionEvento" name="duracionEvento" min="0" required>
-                                        </div>
-                        
-                                        <div class="col-md-6 mb-3">
-                                            <label for="numeroParticipantes" class="form-label">Número de participantes:</label>
-                                            <input type="number" class="form-control" id="numeroParticipantes" name="numeroParticipantes" min="1" required>
-                                        </div>
+                                    <div class="form-group">
+                                    <label for="fechaEvento">Fecha del evento:</label>
+                                    <input type="date" class="form-control" id="fechaEvento" name="fechaEvento" required>
                                     </div>
-                        
+                                    <div class="form-group">
+                                    <label for="horaInicio">Hora de inicio:</label>
+                                    <input type="time" class="form-control" id="horaInicio" name="horaInicio" required>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="horaFin">Hora de finalización:</label>
+                                    <input type="time" class="form-control" id="horaFin" name="horaFin" required>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="numeroParticipantes">Número de participantes:</label>
+                                    <input type="number" class="form-control" id="numeroParticipantes" name="numeroParticipantes" min="1" required>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="imagenEvento">Imagen del evento:</label>
+                                    <input type="file" class="form-control-file" id="imagenEvento" name="imagenEvento" accept="image/*">
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Crear evento</button>
                                 </form>
+                                </div>
                             </div>
-                        </div>
                         
                         
                     </div>

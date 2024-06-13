@@ -50,7 +50,7 @@ async function cargarDetalleEmpleado(idEmpleado) {
     );
     if (response.status === 200) {
       console.log(response.data);
-      const { nombre, correo, edad, cedula, sexo, telefono, cargo, avatar } =
+      const { nombre, edad, cedula, sexo, telefono, cargo, avatar } =
         response.data;
       const avatarURL = avatar ? `acciones/fotos_empleados/${avatar}` : null;
       const avatarExistente = avatarURL
@@ -69,9 +69,6 @@ async function cargarDetalleEmpleado(idEmpleado) {
       ulDetalleEmpleado.innerHTML = ` 
         <li class="list-group-item"><b>Nombre:</b> 
           ${nombre ? nombre : "No disponible"}
-        </li>
-        <li class="list-group-item"><b>Nombre:</b> 
-          ${correo ? correo : "No disponible"}
         </li>
         <li class="list-group-item"><b>Edad:</b> 
           ${edad ? edad : "No disponible"}
