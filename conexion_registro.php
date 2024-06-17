@@ -7,7 +7,9 @@ $nombre = $_POST["nombre"];
 $correo = $_POST["correo"];
 $usuario = $_POST["usuario"];
 $contraseña = $_POST["contraseña"];
-$acepta_terminos = isset($_POST['acepta_terminos']) ? 1 : 0; // 1 si está marcado, 0 si no
+$fecha_llegada = $_POST["fecha_llegada"];
+$fecha_salida = $_POST["fecha_salida"];
+
 
 
 // Verificar si el usuario ya existe en la base de datos
@@ -19,7 +21,7 @@ echo "El correo ya se encuentra registrado. Por favor, elige otro correo electr�
 } else {
 
 // Insertar datos en la base de datos
-$sql = "INSERT INTO registro_usuarios (nombre, correo, usuario, contraseña, acepta_terminos) VALUES ('$nombre', '$correo', '$usuario', '$contraseña', '$acepta_terminos')";
+$sql = "INSERT INTO registro_usuarios (nombre, correo, usuario, contraseña, fecha_llegada, fecha_salida ) VALUES ('$nombre', '$correo', '$usuario', '$contraseña', '$fecha_llegad ', '$fecha_salida ')";
 
 if ($conexion->query($sql) === TRUE) {
 // Redireccionar a la página de inicio de sesión

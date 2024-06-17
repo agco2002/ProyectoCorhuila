@@ -38,6 +38,14 @@
             <label class="form-label">Usuario:</label>
             <input type="text" class="form-control" name="usuario" value="<?php echo $row['usuario']; ?>">
         </div>
+        <div class="mb-3">
+            <label class="form-label">Fecha Ingreso:</label>
+            <input type="text" class="form-control" name="fecha_llegada" value="<?php echo $row['fecha_llegada']; ?>">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fecha Salida:</label></label>
+            <input type="text" class="form-control" name="fecha_salida" value="<?php echo $row['fecha_salida']; ?>">
+        </div>
 
         <div class="text-center">
             <button type="submit" class="btn btn-success">Actualizar Información</button>

@@ -18,7 +18,7 @@ require_once 'config/config.php';
 $searchTerm = isset($_GET['search_term']) ? mysqli_real_escape_string($conexion, $_GET['search_term']) : '';
 
 // Prepare the SQL query with search term
-$sql = "SELECT id, nombre, correo, usuario, fecha_registro FROM registro_usuarios WHERE nombre LIKE '%$searchTerm%'"; // Consultar usuarios por nombre
+$sql = "SELECT id, nombre, correo, usuario, fecha_llegada, fecha_salida FROM registro_usuarios WHERE nombre LIKE '%$searchTerm%'"; // Consultar usuarios por nombre
 $result = mysqli_query($conexion, $sql);
 
 if ($result) {
@@ -43,7 +43,8 @@ if ($result) {
     echo "<th>Nombres:</th>";
     echo "<th>Correo:</th>";
     echo "<th>Usuario:</th>";
-    echo "<th>Fecha Registro:</th>";
+    echo "<th>Fecha Ingreso:</th>";
+    echo "<th>Fecha Salida:</th>";
     echo "<th>Acciones</th>"; // Add a column for actions (optional)
     echo "</tr>";
     echo "</thead>";
@@ -55,7 +56,8 @@ if ($result) {
       echo "<td>" . $row['nombre'] . "</td>";
       echo "<td>" . $row['correo'] . "</td>";
       echo "<td>" . $row['usuario'] . "</td>";
-      echo "<td>" . $row['fecha_registro'] . "</td>";
+      echo "<td>" . $row['fecha_llegada'] . "</td>";
+      echo "<td>" . $row['fecha_salida'] . "</td>";
       echo "<td>"; // Add action buttons here (optional)
       // You can add edit and delete buttons with links to specific pages
       echo "</td>";

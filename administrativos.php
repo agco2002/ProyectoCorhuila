@@ -174,7 +174,8 @@ require_once 'config/config.php';
                                         <th>Nombres:</th>
                                         <th>Correo:</th>
                                         <th>Usuario:</th>
-                                        <th>Fecha Registro:</th>
+                                        <th>Fecha Ingreso</th>
+                                        <th>Fecha Salida</th>
                                       </tr>
                                       </thead>
                                       <tbody>
@@ -191,7 +192,8 @@ require_once 'config/config.php';
                                                 <th scope="row"><?php echo $resultado['nombre']?></th>
                                                 <th scope="row"><?php echo $resultado['correo']?></th>
                                                 <th scope="row"><?php echo $resultado['usuario']?></th>
-                                                <th scope="row"><?php echo $resultado['fecha_registro']?></th>                       
+                                                <th scope="row"><?php echo $resultado['fecha_llegada']?></th> 
+                                                <th scope="row"><?php echo $resultado['fecha_salida']?></th>                      
                                                 <th>
                                                     <a href="editar_registro_usuarios.php?id=<?php echo $resultado['id']?>" class="btn btn-success btn-block" onclick="return confirmacion_editar()">Editar</a>
                                                     <a href="Eliminar_registro_usuarios.php?id=<?php echo $resultado['id']?>" class="btn btn-success btn-block" onclick="return confirmacion()">Eliminar</a>
