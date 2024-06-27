@@ -16,16 +16,17 @@
   $db = new mysqli('localhost', 'root', '', 'desarrollo_eventos');
 
   // Consultar datos del evento
-  $consultaEvento = "SELECT titulo, fecha, hora, ubicacion FROM eventos WHERE id_evento = ?";
+  $consultaEvento = "SELECT titulo, iniciador, fecha, hora, ubicacion FROM eventos WHERE id_evento = ?";
   $stmtEvento = $db->prepare($consultaEvento);
   $stmtEvento->bind_param('i', $idEvento);
   $stmtEvento->execute();
-  $stmtEvento->bind_result($tituloEvento, $fechaEvento, $horaEvento, $ubicacionEvento);
+  $stmtEvento->bind_result( $tituloEvento, $iniciador, $fechaEvento, $horaEvento, $ubicacionEvento);
   $stmtEvento->fetch();
   $stmtEvento->close();
 
   // Mostrar datos del evento
   echo "<h2>Evento: $tituloEvento</h2>";
+  echo "<h3>Iniciador: $iniciador</h3>";
   echo "<p>Fecha: $fechaEvento - Hora: $horaEvento</p>";
   echo "<p>Ubicación: $ubicacionEvento</p>";
 
@@ -37,30 +38,15 @@
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required><br>
 
+    <label for="identificación">Identificación:</label>
+    <input type="text" id="identificación" name="identificación" required><br>
+
     <label for="correo">Correo electrónico:</label>
     <input type="email" id="correo" name="correo" required><br>
 
     <input type="submit" value="Agregar participante">
   </form>
 
-  <?php
-
-  // Mostrar lista de participantes existentes (opcional)
-  $consultaParticipantes = "SELECT nombre, correo FROM participantes WHERE id_evento = ?";
-  $stmtParticipantes = $db->prepare($consultaParticipantes);
-  $stmtParticipantes->bind_param('i', $idEvento);
-  $stmtParticipantes->execute();
-  $stmtParticipantes->bind_result($nombreParticipante, $correoParticipante);
-
-  echo "<h3>Participantes actuales:</h3>";
-  while ($stmtParticipantes->fetch()) {
-    echo "<li>$nombreParticipante ($correoParticipante)</li>";
-  }
-
-  $stmtParticipantes->close();
-
-  $db->close();
-
-  ?>
+  
 </body>
 </html>

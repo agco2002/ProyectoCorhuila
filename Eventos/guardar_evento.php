@@ -4,18 +4,19 @@
 $db = new mysqli('localhost', 'root', '', 'desarrollo_eventos');
 
 // Validar datos del formulario
-if (isset($_POST['titulo']) && isset($_POST['descripcion']) &&
+if (isset($_POST['titulo']) && isset($_POST['iniciador']) && isset($_POST['descripcion']) &&
     isset($_POST['fecha']) && isset($_POST['hora']) && isset($_POST['ubicacion'])) {
   $titulo = $_POST['titulo'];
+  $iniciador = $_POST['iniciador'];
   $descripcion = $_POST['descripcion'];
   $fecha = $_POST['fecha'];
   $hora = $_POST['hora'];
   $ubicacion = $_POST['ubicacion'];
 
   // Guardar evento en la base de datos
-  $consulta = "INSERT INTO eventos (titulo, descripcion, fecha, hora, ubicacion) VALUES (?, ?, ?, ?, ?)";
+  $consulta = "INSERT INTO eventos (titulo, iniciador, descripcion, fecha, hora, ubicacion) VALUES (?, ?, ?, ?, ?, ?)";
   $stmt = $db->prepare($consulta);
-  $stmt->bind_param('sssss', $titulo, $descripcion, $fecha, $hora, $ubicacion);
+  $stmt->bind_param('ssssss', $titulo, $iniciador, $descripcion, $fecha, $hora, $ubicacion);
   $stmt->execute();
 
   if ($stmt->affected_rows === 1) {

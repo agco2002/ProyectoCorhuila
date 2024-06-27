@@ -10,6 +10,9 @@
     <label for="titulo">Título:</label>
     <input type="text" id="titulo" name="titulo" required><br>
 
+    <label for="titulo">Iniciador:</label>
+    <input type="text" id="iniciador" name="iniciador" required><br>
+
     <label for="descripcion">Descripción:</label>
     <textarea id="descripcion" name="descripcion" required></textarea><br>
 
