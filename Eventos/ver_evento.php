@@ -31,6 +31,18 @@
 
   // Mostrar botón para agregar participantes
   echo "<a href='agregar_participantes.php?id_evento=$idEvento'>Agregar participantes</a>";
+
+  ?>
+  <a href="eliminar_evento.php?id_evento=<?php echo $idEvento; ?>">Eliminar evento</a>
+
+  <a href="editar_evento.php?id_evento=<?php echo $idEvento; ?>">Editar evento</a>
+
+  
+
+
+<?php
+
+
   // Mostrar lista de participantes existentes (opcional)
   $consultaParticipantes = "SELECT nombre, identificación, correo FROM participantes WHERE id_evento = ?";
   $stmtParticipantes = $db->prepare($consultaParticipantes);
@@ -49,15 +61,7 @@
 
   $db->close();
 
-  ?>
-  <a href="eliminar_evento.php?id_evento=<?php echo $idEvento; ?>">Eliminar evento</a>
-
-  <a href="editar_evento.php?id_evento=<?php echo $idEvento; ?>">Editar evento</a>
-
-  echo "<a href='editar_participante.php?id_evento=$idEvento&id_participante=$participanteId'>Editar participante</a>";
-
-
-<?php
+  
 
   
 
